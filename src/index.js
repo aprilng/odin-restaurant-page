@@ -1,19 +1,15 @@
-/*
-import loadHome from './home';
-import loadMenu from './menu';
-import loadContact from './contact';
+import "../src/styles.css";
+import { showHome } from "../src/home.js";
+import { showMenu } from "../src/menu.js";
+import { showContact } from "../src/contact.js";
 
-function displayTab(tabLoader) {
-  const content = document.getElementById('content');
-  content.innerHTML = '';          // clear current content
-  content.appendChild(tabLoader()); // load selected tab
-}
+const container = document.getElementById("content");
+const homeButton = document.getElementById("homeBtn");
+const menuButton = document.getElementById("menuBtn");
+const contactButton = document.getElementById("contactBtn");
 
-// Load Home tab first
-displayTab(loadHome);
+homeButton.addEventListener("click", () => showHome(container));
+menuButton.addEventListener("click", () => showMenu(container));
+contactButton.addEventListener("click", () => showContact(container));
 
-// Add event listeners for each button
-document.getElementById('homeBtn').addEventListener('click', () => displayTab(loadHome));
-document.getElementById('menuBtn').addEventListener('click', () => displayTab(loadMenu));
-document.getElementById('contactBtn').addEventListener('click', () => displayTab(loadContact));
-*/
+showHome(container);
